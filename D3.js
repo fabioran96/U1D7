@@ -113,36 +113,25 @@ const charactersNames = []
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
 
-for (let index = 0; index < starWarsCharacters.length; index++){
-  console.log(starWarsCharacters[index])
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const character = starWarsCharacters[i]; 
+  charactersNames.push(character.name); 
 }
+
+console.log(charactersNames);
+
 
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
 
-const femaleCharacters = [
-  {
-  name: 'Leia Organa',
-  height: 150,
-  mass: 49,
-  hair_color: 'brown',
-  skin_color: 'light',
-  eye_color: 'brown',
-  birth_year: '19BBY',
-  gender: 'female'},
-
-  {
-    name: 'Beru Whitesun lars',
-    height: 165,
-    mass: 75,
-    hair_color: 'brown',
-    skin_color: 'light',
-    eye_color: 'blue',
-    birth_year: '47BBY',
-    gender: 'female',
-  },
-]
+const femaleCharacters = []
+for (let i = 0; i < starWarsCharacters.length; i++){
+  const character = starWarsCharacters[i];
+  if (character.gender === 'female')
+  femaleCharacters.push(character)
+}
+console.log(femaleCharacters)
 
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
@@ -179,7 +168,6 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
     break;
     case 'blue-gray':
     eyeColor["blue-gray"].push(character);
-    default:
     break;
   }
 }
@@ -234,7 +222,7 @@ if(crewMass < 500){
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === "n/a") {
-      starWarsCharacters[i].gender = "robot"; // Riassegnazione del valore della proprietà "gender"
+      starWarsCharacters[i].gender = "robot";
   }
 }
 
